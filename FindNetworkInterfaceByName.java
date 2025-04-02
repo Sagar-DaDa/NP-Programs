@@ -11,6 +11,7 @@ public class FindNetworkInterfaceByName {
         scanner.close();
         try {
             NetworkInterface networkInterface = NetworkInterface.getByName(interfaceName); //wireless_32768
+            //Use Get-NetAdapter | Select-Object Name, InterfaceIndex, InterfaceName to get interface name in windows pc
             if (networkInterface == null){
                 System.out.println("No such interface: " + interfaceName);
             }else{

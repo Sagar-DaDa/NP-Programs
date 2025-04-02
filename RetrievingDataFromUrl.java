@@ -15,7 +15,7 @@ public class RetrievingDataFromUrl {
             Reader reader = new InputStreamReader(inputStream);
             int content;
             while((content = reader.read()) != -1){
-                System.out.print(content);
+                System.out.print((char)content);
             }
         }catch(MalformedURLException malformedURLException){
             System.out.println(args[0] + " is not a parseable URL.");

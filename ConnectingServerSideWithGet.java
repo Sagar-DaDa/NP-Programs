@@ -24,6 +24,9 @@ public class ConnectingServerSideWithGet {
 
             int c;
             while ((c = fetchedResult.read()) != -1) {
+                if ((char) c == '{') {
+                    System.out.println("\n");
+                }
                 System.out.print((char) c);
             }
         }catch(UnsupportedEncodingException unsupportedEncodingException){

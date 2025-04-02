@@ -12,8 +12,8 @@ public class AccessingPasswordProtectedSite {
     static class MyAuthenticator extends Authenticator {
         @Override
         protected PasswordAuthentication getPasswordAuthentication() {
-            String username = "admin";
-            String password = "admin123x";
+            String username = "postman";
+            String password = "password";
             return new PasswordAuthentication(username, password.toCharArray());
         }
     }
@@ -21,7 +21,7 @@ public class AccessingPasswordProtectedSite {
         // Set the default authenticator
         Authenticator.setDefault(new MyAuthenticator());
 
-        String url = "https://httpbin.org/basic-auth/admin/admin123";
+        String url = "https://postman-echo.com/basic-auth";
         
         try {
             // Create a URL object

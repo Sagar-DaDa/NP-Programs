@@ -6,7 +6,7 @@ public class ResolvingRelativeUri {
         try{
             // public URI resolve(URI uri)
             URI baseOne = new URI("http://example.com/path/");
-            URI relativeOne = new URI("file.txt");
+            URI relativeOne = new URI("network-program.pdf");
             URI resolvedOne = baseOne.resolve(relativeOne);
             System.out.println("Resolved using [resolve(URI uri)]: " + resolvedOne);
 

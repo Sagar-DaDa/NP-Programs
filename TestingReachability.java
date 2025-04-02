@@ -11,7 +11,7 @@ public class TestingReachability {
                     IP address: %s,
                     Status: %s
                     """.formatted(address.getHostName(), address.getHostAddress(),
-                    address.isReachable(Integer.parseInt(args[1])) ? "Reachable" : "Not reachable"));
+                    address.isReachable(100) ? "Reachable" : "Not reachable"));
         } catch (IOException exception) {
             if (exception instanceof UnknownHostException) {
                 System.out.println("UnknownHostException: Unable to resolve host.");
