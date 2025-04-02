@@ -1,5 +1,3 @@
-package NonblockingIO;
-
 import java.nio.CharBuffer;
 
 public class BufferFillDrainDemo {
