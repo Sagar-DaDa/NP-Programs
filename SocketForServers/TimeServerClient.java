@@ -3,11 +3,13 @@ package SocketForServers;
 import java.io.InputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.nio.ByteBuffer;
 import java.util.Date;
 
 public class TimeServerClient {
     public final static String SERVER = "localhost"; // Replace with server IP if not running locally
     public final static int PORT = 37;
+
     public static void main(String[] args) {
         long differenceBetweenEpochs = 2208988800L;
 
@@ -21,11 +23,8 @@ public class TimeServerClient {
                 throw new IOException("Incomplete time data received from server.");
             }
 
-            // Convert the byte array to a long value
-            long secondsSince1900 = ((time[0] & 0xFFL) << 24)
-                                  | ((time[1] & 0xFFL) << 16)
-                                  | ((time[2] & 0xFFL) << 8)
-                                  | (time[3] & 0xFFL);
+            // Use ByteBuffer to convert the byte array to a long value
+            long secondsSince1900 = ByteBuffer.wrap(time).getInt() & 0xFFFFFFFFL;
 
             // Convert to seconds since 1970 (Unix epoch)
             long secondsSince1970 = secondsSince1900 - differenceBetweenEpochs;

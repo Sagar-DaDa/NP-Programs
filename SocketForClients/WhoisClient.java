@@ -7,7 +7,7 @@ public class WhoisClient {
     public static void main(String[] args) {
         String whoisServer = "whois.arin.net";
         int port = 43;
-        String query = "8.8.8.8"; // Example IP address
+        String query = "23.56.52.26"; // Example IP address
         
         try (Socket socket = new Socket(whoisServer, port);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
