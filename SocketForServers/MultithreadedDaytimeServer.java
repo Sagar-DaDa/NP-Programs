@@ -9,6 +9,7 @@ public class MultithreadedDaytimeServer {
 
     public static void main(String[] args) {
         try (ServerSocket server = new ServerSocket(PORT)) {
+            System.out.println("Server is started...");
             while (true) {
                 try {
                     Socket connection = server.accept();

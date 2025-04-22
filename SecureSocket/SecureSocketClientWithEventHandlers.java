@@ -1,6 +1,5 @@
 package SecureSocket;
 
-import java.io.*;
 import javax.net.ssl.*;
 
 public class SecureSocketClientWithEventHandlers {
