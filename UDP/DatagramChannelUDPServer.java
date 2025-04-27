@@ -35,7 +35,7 @@ public class DatagramChannelUDPServer {
                 System.out.println("Received message from " + clientAddress + ": " + message);
                 
                 // Prepare a response message
-                String response = "Message received: " + message;
+                String response = message;
                 ByteBuffer responseBuffer = ByteBuffer.wrap(response.getBytes());
                 
                 // Send the response to the client

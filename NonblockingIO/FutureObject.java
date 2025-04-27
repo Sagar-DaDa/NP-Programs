@@ -25,6 +25,11 @@ public class FutureObject {
         // Read the file asynchronously
         Future<Integer> result = channel.read(buffer, 0); // position = 0
 
+        /* Uncomment it if you want to visibly prove the asynchronous behavior, 
+        add some time-consuming operation after initiating the read */
+        // System.out.println("Doing other important work while file is being read..."); 
+        // Thread.sleep(1000); // Simulate doing other work
+
         // Wait for the read operation to complete
         while (!result.isDone()) {
             System.out.println("Task of reading file asynchronously is in progress.");
